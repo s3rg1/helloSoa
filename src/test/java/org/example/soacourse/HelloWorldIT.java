@@ -48,4 +48,11 @@ public class HelloWorldIT {
         JsonBean output = parser.readValueAs(JsonBean.class);
         assertEquals("Maple", output.getVal2());
     }
+    
+	@Test
+    public void testJsonBean() throws Exception {
+		JsonBean jb = new JsonBean();
+		jb.setVal1("val1");
+        assertEquals(jb.getVal1(), "val2");
+    }
 }
