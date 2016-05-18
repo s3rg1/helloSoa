@@ -14,9 +14,6 @@ public class HelloWorld {
     @Path("/echo/{input}")
     @Produces("text/plain")
     public String ping(@PathParam("input") String input) {
-    	
-    	
-    	
         return input;
     }
 
