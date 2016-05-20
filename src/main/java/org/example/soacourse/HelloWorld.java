@@ -16,6 +16,7 @@ public class HelloWorld {
     public String ping(@PathParam("input") String input) {
     	//Testing the Deployment Pipeline reaction when adding this line
     	//And this line too
+    	//And this
         return input;
     }
 
