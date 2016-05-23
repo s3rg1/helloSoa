@@ -53,6 +53,6 @@ public class HelloWorldIT {
     public void testJsonBean() throws Exception {
 		JsonBean jb = new JsonBean();
 		jb.setVal1("val1");
-        assertEquals(jb.getVal1(), "val1");
+        assertEquals(jb.getVal1(), "val2");
     }
 }
