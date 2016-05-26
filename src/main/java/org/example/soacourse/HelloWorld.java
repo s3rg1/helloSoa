@@ -29,5 +29,16 @@ public class HelloWorld {
         input.setVal2(input.getVal1());
         return Response.ok().entity(input).build();
     }
+    
+    @GET
+    @Path("/code-analysis/bad")
+    @Produces("application/json")
+    public JsonBean badCodeAnalysis() {
+    	System.out.println("Testing SonarQube");
+    	
+    	System.exit(0);
+    	
+        return new JsonBean();
+    }
 }
 
