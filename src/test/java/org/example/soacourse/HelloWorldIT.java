@@ -51,6 +51,7 @@ public class HelloWorldIT {
     
 	@Test
     public void testJsonBean() throws Exception {
+		//Testing SonarQube #1
 		JsonBean jb = new JsonBean();
 		jb.setVal1("val1");
         assertEquals(jb.getVal1(), "val1");
