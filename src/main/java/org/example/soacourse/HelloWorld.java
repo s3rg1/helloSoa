@@ -7,12 +7,18 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+
 @Path("/hello")
 public class HelloWorld {
 
     @GET
     @Path("/echo/{input}")
     @Produces("text/plain")
+    @ApiOperation(value = "Echo input parameter", 
+    notes = "Returns the input value as an echo answer",
+    response = String.class)
     public String ping(@PathParam("input") String input) {
     	//Testing the Deployment Pipeline reaction when adding this line
     	//And this line too

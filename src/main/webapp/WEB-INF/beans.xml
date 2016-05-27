@@ -5,12 +5,33 @@
     <context:annotation-config/>
     <bean class="org.springframework.web.context.support.ServletContextPropertyPlaceholderConfigurer"/>
     <bean class="org.springframework.beans.factory.config.PreferencesPlaceholderConfigurer"/>
+    
+    <!-- Swagger configuration -->
+ 	<bean id="swaggerResource" class="io.swagger.jaxrs.listing.ApiListingResource"/>
+    <bean id="swaggerWriter" class="io.swagger.jaxrs.listing.SwaggerSerializers" scope="singleton"/>
+
+ 	<bean id="swaggerConfig" class="io.swagger.jaxrs.config.BeanConfig">
+        <property name="title" value="Swagger Sample App"/>
+        <property name="version" value="1.0.0" />
+        <property name="schemes" value="http" />
+        <property name="host" value="localhost:8090" />
+        <property name="basePath" value="/"/>
+        <property name="resourcePackage" value="org.example.soacourse"/>
+        <property name="scan" value="true"/>
+    </bean>
+    
     <jaxrs:server id="services" address="/">
         <jaxrs:serviceBeans>
             <bean class="org.example.soacourse.HelloWorld"/>
+            <!-- Swagger configuration -->
+            <ref bean="swaggerResource" />
         </jaxrs:serviceBeans>
         <jaxrs:providers>
             <bean class="org.codehaus.jackson.jaxrs.JacksonJsonProvider"/>
+            
+			<!-- Swagger configuration -->
+            <ref bean="swaggerWriter" />
         </jaxrs:providers>
     </jaxrs:server>
 </beans>
+
