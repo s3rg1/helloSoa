@@ -40,9 +40,8 @@ public class HelloWorld {
     @Path("/code-analysis/bad")
     @Produces("application/json")
     public JsonBean badCodeAnalysis() {
-    	System.out.println("Testing SonarQube");
-    	
-    	System.exit(0);
+    	//System.out.println("Testing SonarQube");
+    	//System.exit(0);
     	
         return new JsonBean();
     }
