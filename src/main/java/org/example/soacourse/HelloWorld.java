@@ -11,6 +11,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
 @Path("/hello")
+@Api(value = "/hello", description = "Operations about pets")
 public class HelloWorld {
 
     @GET
@@ -32,7 +33,9 @@ public class HelloWorld {
     @Consumes("application/json")
     @Path("/jsonBean")
     public Response modifyJson(JsonBean input) {
+    	//assing input va1 to input val2 
         input.setVal2(input.getVal1());
+        //return transformed input as an OK response
         return Response.ok().entity(input).build();
     }
     
