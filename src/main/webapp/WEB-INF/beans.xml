@@ -15,14 +15,15 @@
         <property name="version" value="1.0.0" />
         <property name="schemes" value="http" />
         <property name="host" value="localhost:8090" />
-        <property name="basePath" value="/"/>
+        <property name="basePath" value="/HelloSoa"/>
         <property name="resourcePackage" value="org.example.soacourse"/>
         <property name="scan" value="true"/>
     </bean>
     
     <jaxrs:server id="services" address="/">
         <jaxrs:serviceBeans>
-            <bean class="org.example.soacourse.HelloWorld"/>
+            <bean class="org.example.soacourse.resource.HelloWorld"/>
+            <bean class="org.example.soacourse.resource.ProductResource"/>
             <!-- Swagger configuration -->
             <ref bean="swaggerResource" />
         </jaxrs:serviceBeans>

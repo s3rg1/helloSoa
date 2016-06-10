@@ -1,4 +1,4 @@
-package org.example.soacourse;
+package org.example.soacourse.model;
 
 
 public class JsonBean {

@@ -1,4 +1,4 @@
-package org.example.soacourse;
+package org.example.soacourse.resource;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -7,24 +7,22 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
 
+import org.example.soacourse.model.JsonBean;
+
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
 @Path("/hello")
-@Api(value = "/hello", description = "Operations about pets")
+@Api(value = "Sample category")
 public class HelloWorld {
 
     @GET
     @Path("/echo/{input}")
     @Produces("text/plain")
     @ApiOperation(value = "Echo input parameter", 
-    notes = "Returns the input value as an echo answer",
-    response = String.class)
+    	notes = "Returns the input value as an echo answer",
+    	response = String.class)
     public String ping(@PathParam("input") String input) {
-    	//Testing the Deployment Pipeline reaction when adding this line
-    	//And this line too
-    	//And this
-    	//new line
         return input;
     }
 
@@ -37,16 +35,6 @@ public class HelloWorld {
         input.setVal2(input.getVal1());
         //return transformed input as an OK response
         return Response.ok().entity(input).build();
-    }
-    
-    @GET
-    @Path("/code-analysis/bad")
-    @Produces("application/json")
-    public JsonBean badCodeAnalysis() {
-    	//System.out.println("Testing SonarQube");
-    	//System.exit(0);
-    	
-        return new JsonBean();
     }
 }
 
